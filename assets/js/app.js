@@ -12,6 +12,7 @@ const app = new Vue({
     el: '#app',
     data: {
         viewerImage: 0,
+        isActive: false,
         cards: {
             card: [
                 {
