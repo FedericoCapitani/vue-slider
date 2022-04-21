@@ -12,7 +12,6 @@ const app = new Vue({
     el: '#app',
     data: {
         viewerImage: 0,
-        isActive: true,
         cards: {
             card: [
                 {
@@ -49,7 +48,7 @@ const app = new Vue({
             if(this.viewerImage === 0){
                 this.viewerImage = this.cards.card.length
             }
-            
+            this.isActive = !this.isActive
             this.viewerImage--
         },
         nextImage(){
@@ -58,6 +57,7 @@ const app = new Vue({
             if(this.viewerImage === this.cards.card.length){
                 this.viewerImage = 0
             }
+            
         }
     }
 })

@@ -21,11 +21,11 @@
                 <div class="arrow_up" @click="prevImage">
                     <i class="fa-solid fa-angle-up"></i>
                 </div>
-                <img :src="cards.card[0].image" alt="uomo seduto sul molo di un lago" v-bind:class="active">
-                <img :src="cards.card[1].image" alt="città sulla costa di un lago">
-                <img :src="cards.card[2].image" alt="Londra di notte vista big ben">
-                <img :src="cards.card[3].image" alt="città di notte">
-                <img :src="cards.card[4].image" alt="spiagga deserta">
+                <img :src="cards.card[0].image" alt="uomo seduto sul molo di un lago" v-bind:class="{active: cards.card[0].isActive}">
+                <img :src="cards.card[1].image" alt="città sulla costa di un lago" v-bind:class="{active: cards.card[1].isActive}">
+                <img :src="cards.card[2].image" alt="Londra di notte vista big ben" v-bind:class="{active: cards.card[2].isActive}">
+                <img :src="cards.card[3].image" alt="città di notte" v-bind:class="{active: cards.card[3].isActive}">
+                <img :src="cards.card[4].image" alt="spiagga deserta" v-bind:class="{active: cards.card[4].isActive}">
                 <div class="arrow_down" @click="nextImage">
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
