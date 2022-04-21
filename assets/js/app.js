@@ -58,7 +58,7 @@ const app = new Vue({
             if(this.viewerImage === this.cards.card.length){
                 this.viewerImage = 0
             }
-            
+            this.isActive = !this.isActive
         }
     }
 })
