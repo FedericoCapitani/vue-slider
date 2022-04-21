@@ -6,20 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slider</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
     <div id="app">
         <div class="container">
             <div class="viewer">
-                <img src="assets/img/01.jpg" alt="uomo seduto sul molo di un lago">
+                <img :src="cards.card[viewerImage].image" alt="uomo seduto sul molo di un lago">
+                <div class="title">{{cards.card[viewerImage].title}}</div>
+                <div class="text">{{cards.card[viewerImage].text}}</div>
             </div>
             <div class="slider">
-                <img src="./assets/img/01.jpg" alt="">
-                <img src="./assets/img/02.jpg" alt="">
-                <img src="./assets/img/03.jpg" alt="">
-                <img src="./assets/img/04.jpg" alt="">
-                <img src="./assets/img/05.jpg" alt="">
+                <div class="arrow_up" @click="prevImage">
+                    <i class="fa-solid fa-angle-up"></i>
+                </div>
+                <img :src="cards.card[0].image" alt="uomo seduto sul molo di un lago" v-bind:class="active">
+                <img :src="cards.card[1].image" alt="città sulla costa di un lago">
+                <img :src="cards.card[2].image" alt="Londra di notte vista big ben">
+                <img :src="cards.card[3].image" alt="città di notte">
+                <img :src="cards.card[4].image" alt="spiagga deserta">
+                <div class="arrow_down" @click="nextImage">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
             </div>
         </div>
     </div>
