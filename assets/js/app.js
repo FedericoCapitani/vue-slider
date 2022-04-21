@@ -12,7 +12,7 @@ const app = new Vue({
     el: '#app',
     data: {
         viewerImage: 0,
-        isActive: false,
+        isActive: true,
         cards: {
             card: [
                 {
@@ -49,7 +49,13 @@ const app = new Vue({
             if(this.viewerImage === 0){
                 this.viewerImage = this.cards.card.length
             }
-            this.isActive = !this.isActive
+            for(let i = 0; i < this.cards.card.length; i++){
+                if(i === this.viewerImage){
+                    this.isActive = true
+                }else{
+                    this.isActive = false
+                }
+            }
             this.viewerImage--
         },
         nextImage(){
@@ -58,7 +64,16 @@ const app = new Vue({
             if(this.viewerImage === this.cards.card.length){
                 this.viewerImage = 0
             }
-            this.isActive = !this.isActive
+            for(let i = 0; i < this.cards.card.length; i++){
+                console.log(i);
+                console.log(` immagine ${this.viewerImage}`);
+                console.log(this.isActive);
+                if(i === this.viewerImage){
+                    this.isActive = true
+                }else{
+                    this.isActive = false
+                }
+            }
         }
     }
 })
